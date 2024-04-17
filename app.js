@@ -9,6 +9,21 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+// Import the functions you need from the SDKs you need
+const firebase = require('firebase');
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCFisFp--WFxeKiyTXo00I9yEzk8nrr3T8",
+  authDomain: "servy-39f61.firebaseapp.com",
+  projectId: "servy-39f61",
+  storageBucket: "servy-39f61.appspot.com",
+  messagingSenderId: "528883604006",
+  appId: "1:528883604006:web:af6ae690d67488576ca4e7"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
