@@ -1,14 +1,24 @@
+<<<<<<< HEAD
 const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
+=======
+require('dotenv').config();
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+>>>>>>> 24d97e294c21abdaee11e01e8ac5af5247fc78f3
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const adminRouter = require("./routes/admin");
 
+<<<<<<< HEAD
 const app = express();
 
 main().catch((err) => console.log(err));
@@ -31,8 +41,15 @@ const firebaseConfig = {
   appId: "1:528883604006:web:af6ae690d67488576ca4e7",
 };
 
+=======
+// Import the functions you need from the SDKs you need
+const firebase = require('firebase');
+const firebaseConfig = require('./config/firebaseConfig');
+>>>>>>> 24d97e294c21abdaee11e01e8ac5af5247fc78f3
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+var app = express();
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
