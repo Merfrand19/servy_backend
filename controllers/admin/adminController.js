@@ -7,10 +7,13 @@ const Service = require("../../models/service");
 // Méthode pour créer une nouvelle catégorie de service
 exports.createCategorieDeService = async (req, res) => {
   try {
+    const categorie = await CategorieDeService.findOne({ nom: req.body.nom });
+
+    if (categorie) throw new Error("Existe déjà");
     const nouvelleCategorie = await CategorieDeService.create(req.body);
     res.status(201).json(nouvelleCategorie);
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(400).json({ message: error.message, provided: req.body });
   }
 };
 

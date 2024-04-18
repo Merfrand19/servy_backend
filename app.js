@@ -16,11 +16,9 @@ main().catch((err) => console.log(err));
 
 async function main() {
   await mongoose.connect("mongodb://127.0.0.1:27017/servy");
-
-  // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
-// view engine setup
+// // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
 
@@ -30,7 +28,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", indexRouter);
+// app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/admin", adminRouter);
 
