@@ -4,15 +4,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+const firebase = require('firebase');
+const firebaseConfig = require('./config/firebaseConfig');
+firebase.initializeApp(firebaseConfig);
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 // Import the functions you need from the SDKs you need
-const firebase = require('firebase');
-const firebaseConfig = require('./config/firebaseConfig');
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+
 
 var app = express();
 
